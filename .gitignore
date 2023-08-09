@@ -1,0 +1,9 @@
+*.log
+.lock
+.build/
+chroot/
+cache/
+binary/
+/binary.*
+/chroot.*
+/live-image-*
