@@ -32,6 +32,8 @@ if [ $do_build_image -eq 0 -a $do_build_image -eq 0 ]; then
     do_build_image=1
 fi
 
+script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
 function setup_func() {
     git clone https://salsa.debian.org/live-team/live-build.git
     cd live-build
@@ -44,10 +46,15 @@ function clean_func() {
 }
 
 function build_image_func() {
-    lb config && \
+    rm -rf config \
+    && \
+    lb config \
+    && \
     sudo lb build
 }
 
+pushd $script_dir \
+&& \
 if [ $do_clean -eq 1 ]; then
     clean_func
 fi \
