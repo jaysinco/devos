@@ -3,9 +3,12 @@
 /.build
 /chroot
 /cache
-/config
 /binary
 /local
 /binary.*
 /chroot.*
 /live-image-*
+
+/config/*
+!/config/package-lists
+/config/package-lists/live.list.chroot
