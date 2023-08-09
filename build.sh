@@ -29,6 +29,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [ $do_build_image -eq 0 -a $do_build_image -eq 0 ]; then
+    do_clean=1
     do_build_image=1
 fi
 
@@ -46,8 +47,6 @@ function clean_func() {
 }
 
 function build_image_func() {
-    rm -rf config \
-    && \
     lb config \
     && \
     sudo lb build
