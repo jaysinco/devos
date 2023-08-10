@@ -2,3 +2,4 @@ libpam-systemd
 weston
 htop
 build-essential
+libdrm-tests
