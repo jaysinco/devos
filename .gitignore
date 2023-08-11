@@ -13,3 +13,7 @@
 !/config/includes.chroot_after_packages
 !/config/package-lists
 /config/package-lists/live.list.chroot
+!/config/hooks
+/config/hooks/live/*
+!/config/hooks/live/1060-devos.hook.chroot
+/config/hooks/normal/*
