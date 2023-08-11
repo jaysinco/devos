@@ -2,3 +2,8 @@
 
 set -e
 
+dpkg -i /data/live-build_20230502_all.deb
+rm /data/live-build_20230502_all.deb
+
+tar zxf /data/nvim-v0.7.2-linux-x86_64.tar.gz --directory=/usr --strip-components=1
+rm /data/nvim-v0.7.2-linux-x86_64.tar.gz

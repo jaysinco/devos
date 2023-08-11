@@ -5,6 +5,9 @@ libdrm-tests
 glmark2-*
 openssh-server
 net-tools
+debootstrap
+zip
+unzip
 
 build-essential
 cmake
@@ -13,7 +16,6 @@ clang
 clangd
 clang-format
 clang-tidy
-neovim=0.7.2-7
 python3
 python3-pip
 python-is-python3

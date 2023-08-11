@@ -18,12 +18,19 @@ if [[ ! $(type -P "conan") ]]; then
 fi
 
 if [ ! -f "$HOME/.ssh/id_rsa" ]; then
-    echo "-- copy ssh key"
+    echo "-- install ssh key"
     mkdir -p $HOME/.ssh
     cp /data/id_rsa /data/id_rsa.pub $HOME/.ssh/
     chmod 700 $HOME/.ssh
     chmod 600 $HOME/.ssh/id_rsa
     chmod 644 $HOME/.ssh/id_rsa.pub
+fi
+
+nvim_data_dir=$HOME/.local/share/nvim
+if [ ! -d "$nvim_data_dir/site" ]; then
+    echo "-- install nvim data"
+    mkdir -p $nvim_data_dir
+    unzip -q /data/nvim-data-site-v0.7.2-linux-x86_64.zip -d $nvim_data_dir
 fi
 
 function clone_repo() {

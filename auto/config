@@ -15,7 +15,7 @@ lb config noauto \
     --mirror-binary-security https://mirrors.ustc.edu.cn/debian-security \
     --mirror-debian-installer https://mirrors.ustc.edu.cn/debian \
     --cache-packages true \
-    --cache-stages "bootstrap,chroot" `# bootstrap|chroot|rootfs` \
+    --cache-stages "bootstrap," `# bootstrap|chroot|rootfs` \
     --binary-filesystem fat32 \
     --binary-images iso-hybrid \
     --iso-application "DevOS" \
@@ -34,6 +34,6 @@ lb config noauto \
     --uefi-secure-boot enable \
     --security true \
     --updates true \
-    --system live \
+    --system live `# live|normal` \
     --debug \
     "${@}"
