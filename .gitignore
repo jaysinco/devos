@@ -11,8 +11,13 @@
 /config/*
 
 !/config/includes.chroot_after_packages
+/config/includes.chroot_after_packages/data/*
+!/config/includes.chroot_after_packages/data/user-bootstrap.sh
+
 !/config/package-lists
-/config/package-lists/live.list.chroot
+/config/package-lists/*
+!/config/package-lists/devos.list.chroot
+
 !/config/hooks
 /config/hooks/live/*
 !/config/hooks/live/1060-devos.hook.chroot

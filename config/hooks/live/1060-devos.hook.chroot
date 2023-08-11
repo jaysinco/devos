@@ -2,4 +2,3 @@
 
 set -e
 
-pip3 install conan==1.52 -i https://pypi.tuna.tsinghua.edu.cn/simple
