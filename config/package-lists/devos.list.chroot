@@ -5,7 +5,6 @@ libdrm-tests
 glmark2-*
 openssh-server
 net-tools
-debootstrap
 zip
 unzip
 

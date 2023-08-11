@@ -7,9 +7,15 @@ script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 bashrc_hint='#### devos user bootstrap ####'
 if ! grep -q "$bashrc_hint" $HOME/.bashrc; then
     echo "-- change $HOME/.bashrc"
-    printf "\n\n$bashrc_hint\n" >> $HOME/.bashrc
-    printf 'shopt -q login_shell || . /etc/profile.d/git-prompt.sh\n' >> $HOME/.bashrc
-    printf 'export PATH=/usr/local/sbin:/usr/sbin:/sbin:~/.local/bin:$PATH\n' >> $HOME/.bashrc
+    {
+        echo
+        echo
+        echo "$bashrc_hint"
+        echo "shopt -q login_shell || . /etc/profile.d/git-prompt.sh"
+        echo 'export PATH=/usr/local/sbin:/usr/sbin:/sbin:~/.local/bin:$PATH'
+        echo "alias code='code --enable-features=WaylandWindowDecorations --ozone-platform=wayland'"
+        echo
+    } >> $HOME/.bashrc
 fi
 
 if [[ ! $(type -P "conan") ]]; then
