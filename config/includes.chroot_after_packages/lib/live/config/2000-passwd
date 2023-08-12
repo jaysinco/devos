@@ -2,4 +2,4 @@
 
 set -e
 
-yes 123456 | sudo passwd sinco
+yes sinco | sudo passwd sinco

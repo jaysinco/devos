@@ -43,7 +43,7 @@ function build_image_func() {
     && \
     lb config \
     && \
-    sudo lb build
+    time sudo lb build
 }
 
 pushd $script_dir \

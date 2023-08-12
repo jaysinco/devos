@@ -55,3 +55,5 @@ function clone_repo() {
 }
 
 clone_repo $HOME/.config/nvim jaysinco/nvim.git master
+clone_repo $HOME/atlas jaysinco/atlas.git master
+clone_repo $HOME/devos jaysinco/devos.git master

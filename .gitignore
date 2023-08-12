@@ -10,6 +10,10 @@
 /live-image-*
 /config/*
 
+!/config/includes.installer
+config/includes.installer/*
+!/config/includes.installer/preseed.cfg
+
 !/config/includes.chroot_after_packages
 /config/includes.chroot_after_packages/data/*
 !/config/includes.chroot_after_packages/data/user-bootstrap.sh
