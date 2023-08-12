@@ -3,4 +3,5 @@
 set -e
 
 tar zxf /data/nvim-v0.7.2-linux-x86_64.tar.gz --directory=/usr --strip-components=1
+ln -s /usr/bin/nvim /usr/bin/vim
 rm /data/nvim-v0.7.2-linux-x86_64.tar.gz
