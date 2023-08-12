@@ -31,15 +31,18 @@ fi
 
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
-function setup_func() {
-    git clone https://salsa.debian.org/live-team/live-build.git
-    cd live-build
-    dpkg-buildpackage -b -uc -us
-    dpkg -i ../live-build_20230502_all.deb
-}
+# function install_live_build() {
+#     git clone https://salsa.debian.org/live-team/live-build.git
+#     cd live-build
+#     dpkg-buildpackage -b -uc -us
+#     dpkg -i ../live-build_20230502_all.deb
+# }
 
 function build_image_func() {
     sudo lb clean \
+    && \
+    find $script_dir/config/includes.chroot_after_packages/data/ \
+        -name "*.deb" -exec mv -f {} $script_dir/config/packages.chroot/ \; \
     && \
     lb config \
     && \

@@ -32,8 +32,8 @@ lb config noauto \
     --apt-recommends true \
     --apt-secure false \
     --uefi-secure-boot enable \
-    --security true \
-    --updates true \
+    --security false \
+    --updates false \
     --system live `# live|normal` \
     --debug \
     "${@}"

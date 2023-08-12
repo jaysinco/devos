@@ -7,14 +7,15 @@ openssh-server
 net-tools
 zip
 unzip
+sudo
 
-#build-essential
+build-essential
 cmake
 git
-#clang
-#clangd
-#clang-format
-#clang-tidy
+clang
+clangd
+clang-format
+clang-tidy
 python3
 python3-pip
 python-is-python3
