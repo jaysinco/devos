@@ -16,8 +16,9 @@ libpam-systemd
 xwayland
 fcitx5
 fcitx5-chinese-addons
-fonts-hack-ttf
 fonts-wqy-zenhei
+konsole
+ripgrep
 
 htop
 time
