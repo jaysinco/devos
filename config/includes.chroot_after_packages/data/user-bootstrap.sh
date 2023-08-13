@@ -14,6 +14,7 @@ if ! grep -q "$bashrc_hint" $HOME/.bashrc; then
         echo "shopt -q login_shell || . /etc/profile.d/git-prompt.sh"
         echo "export XDG_SESSION_TYPE=wayland"
         echo "export GDK_BACKEND=x11"
+        echo "export GDK_DPI_SCALE=1.2"
         echo "export GTK_IM_MODULE=fcitx"
         echo "export QT_QPA_PLATFORM=xcb"
         echo "export QT_IM_MODULE=fcitx"

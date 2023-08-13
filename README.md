@@ -1,6 +1,7 @@
 ## Build
 ```shell
 # build
+## upload data
 ./build.sh
 
 # write to disk
@@ -19,4 +20,7 @@ sudo vim /etc/network/interfaces.d/0100-static-ip
 
 # keyboard*
 fcitx5-config-qt
+
+# misc
+xlsclients
 ```
