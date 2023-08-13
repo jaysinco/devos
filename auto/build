@@ -2,4 +2,4 @@
 
 set -e
 
-lb build noauto "${@}" 2>&1 | tee build.log
+time -f "%E elapsed" lb build noauto "${@}" 2>&1 | tee build.log

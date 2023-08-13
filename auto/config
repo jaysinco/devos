@@ -16,7 +16,6 @@ lb config noauto \
     --mirror-debian-installer https://mirrors.ustc.edu.cn/debian \
     --cache-packages true \
     --cache-stages "bootstrap," `# bootstrap|chroot|rootfs` \
-    --binary-filesystem fat32 \
     --binary-images iso-hybrid \
     --iso-application "DevOS" \
     --iso-publisher 'DevOS; https://gitee.com/jaysinco/devos; jaysinco@163.com' \
@@ -29,11 +28,11 @@ lb config noauto \
     --linux-packages "linux-image" \
     --linux-flavours amd64 \
     --apt-indices true \
-    --apt-recommends true \
+    --apt-recommends false \
     --apt-secure false \
     --uefi-secure-boot enable \
     --security false \
     --updates false \
-    --system live `# live|normal` \
+    --system live \
     --debug \
     "${@}"

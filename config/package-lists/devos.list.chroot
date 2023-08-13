@@ -1,5 +1,18 @@
-libpam-systemd
+dbus
+dbus-daemon
+apparmor
+user-setup
+locales
+keyboard-configuration
+libldap-common
+libsasl2-modules
+publicsuffix
+uuid-runtime
+xkb-data
+live-tools
+
 weston
+libpam-systemd
 xwayland
 fcitx5
 fcitx5-chinese-addons
@@ -13,7 +26,10 @@ openssh-server
 net-tools
 zip
 unzip
+rsync
 sudo
+zstd
+gnupg
 
 build-essential
 cmake

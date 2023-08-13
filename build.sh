@@ -46,7 +46,10 @@ function build_image_func() {
     && \
     lb config \
     && \
-    time sudo lb build
+    sudo lb build \
+    && \
+    sudo chroot $script_dir/chroot \
+        apt list --installed > $script_dir/apt.installed 2>/dev/null
 }
 
 pushd $script_dir \
