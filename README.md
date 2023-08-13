@@ -9,7 +9,7 @@ dd if=./live-image-amd64.hybrid.iso of=/dev/sdb bs=64M conv=fsync status=progres
 
 ## Post Install
 ```shell
-# env
+# required
 /data/user-bootstrap.sh
 sudo passwd root
 

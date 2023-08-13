@@ -15,9 +15,10 @@ if ! grep -q "$bashrc_hint" $HOME/.bashrc; then
         echo "export XDG_SESSION_TYPE=wayland"
         echo "export GDK_BACKEND=x11"
         echo "export GTK_IM_MODULE=fcitx"
-        echo "export QT_QPA_PLATFORM=x11"
+        echo "export QT_QPA_PLATFORM=xcb"
         echo "export QT_IM_MODULE=fcitx"
         echo "export XMODIFIERS=@im=fcitx"
+        echo "export EDITOR=/usr/bin/nvim"
         echo 'export PATH=/usr/local/sbin:/usr/sbin:/sbin:~/.local/bin:$PATH'
         echo
     } >> $HOME/.bashrc

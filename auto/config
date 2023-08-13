@@ -20,7 +20,7 @@ lb config noauto \
     --iso-application "DevOS" \
     --iso-publisher 'DevOS; https://gitee.com/jaysinco/devos; jaysinco@163.com' \
     --iso-volume 'DevOS $(date +%Y%m%d-%H:%M)' \
-    --debian-installer none `# cdrom|netinst|netboot|businesscard|live|none` \
+    --debian-installer live `# cdrom|netinst|netboot|businesscard|live|none` \
     --debian-installer-distribution bookworm \
     --debian-installer-gui true \
     --bootappend-live "boot=live components quiet splash" \
@@ -28,7 +28,7 @@ lb config noauto \
     --linux-packages "linux-image" \
     --linux-flavours amd64 \
     --apt-indices true \
-    --apt-recommends false \
+    --apt-recommends true \
     --apt-secure false \
     --uefi-secure-boot enable \
     --security false \
