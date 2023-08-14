@@ -21,7 +21,7 @@ fi
 
 if [[ ! $(type -P "conan") ]]; then
     echo "-- install conan"
-    pip3 install conan==1.52 -i https://pypi.tuna.tsinghua.edu.cn/simple --break-system-packages
+    pip3 install conan==1.52 -i https://pypi.tuna.tsinghua.edu.cn/simple -q --break-system-packages
 fi
 
 if [ ! -f "$HOME/.ssh/id_rsa" ]; then
@@ -40,9 +40,23 @@ if [ ! -d "$nvim_data_dir/site" ]; then
     unzip -q /data/nvim-data-site-v0.7.2-linux-x86_64.zip -d $nvim_data_dir
 fi
 
+konsole_data_dir=$HOME/.local/share/konsole
+if [ ! -d "$konsole_data_dir/sinco.profile" ]; then
+    echo "-- install konsole data"
+    mkdir -p $konsole_data_dir
+    cp /etc/devos/konsole/* $konsole_data_dir
+fi
+
+vscode_config_dir=$HOME/.config/Code/User
+if [ ! -d "$vscode_config_dir/extensions.json" ]; then
+    echo "-- install vscode config"
+    mkdir -p $vscode_config_dir
+    cp /etc/devos/vscode/* $vscode_config_dir
+fi
+
 function clone_repo() {
-    mkdir -p "$1" 
-    cd "$1" 
+    mkdir -p "$1"
+    cd "$1"
     if [ ! -d "$1/.git" ]; then
         echo "-- git clone $2 -b $3" \
         && git init \
