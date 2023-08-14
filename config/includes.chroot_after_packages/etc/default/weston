@@ -1,0 +1,7 @@
+XDG_SESSION_TYPE=wayland
+GDK_BACKEND=wayland
+GDK_DPI_SCALE=1.2
+GTK_IM_MODULE=fcitx
+QT_QPA_PLATFORM=wayland
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx

@@ -1,16 +1,3 @@
-# dbus
-# dbus-daemon
-# apparmor
-# user-setup
-# locales
-# keyboard-configuration
-# libldap-common
-# libsasl2-modules
-# publicsuffix
-# uuid-runtime
-# xkb-data
-# live-tools
-
 weston
 libpam-systemd
 xwayland
@@ -19,6 +6,7 @@ fcitx5-chinese-addons
 fonts-wqy-zenhei
 konsole
 ripgrep
+kbd
 
 htop
 time

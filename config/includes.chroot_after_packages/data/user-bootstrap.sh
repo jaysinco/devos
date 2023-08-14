@@ -12,13 +12,6 @@ if ! grep -q "$bashrc_hint" $HOME/.bashrc; then
         echo
         echo "$bashrc_hint"
         echo "shopt -q login_shell || . /etc/profile.d/git-prompt.sh"
-        echo "export XDG_SESSION_TYPE=wayland"
-        echo "export GDK_BACKEND=wayland"
-        echo "export GDK_DPI_SCALE=1.2"
-        echo "export GTK_IM_MODULE=fcitx"
-        echo "export QT_QPA_PLATFORM=wayland"
-        echo "export QT_IM_MODULE=fcitx"
-        echo "export XMODIFIERS=@im=fcitx"
         echo "export EDITOR=/usr/bin/nvim"
         echo 'export PATH=/usr/local/sbin:/usr/sbin:/sbin:~/.local/bin:$PATH'
         echo "alias code='code --enable-features=WaylandWindowDecorations --ozone-platform=wayland'"
