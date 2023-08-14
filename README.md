@@ -1,7 +1,6 @@
 ## Build
 ```shell
-# build
-## upload data
+# upload data
 ./build.sh
 
 # write to disk
@@ -13,6 +12,7 @@ dd if=./live-image-amd64.hybrid.iso of=/dev/sdb bs=64M conv=fsync status=progres
 # required
 /data/user-bootstrap.sh
 sudo passwd root
+sudo reboot
 
 # network*
 sudo echo 'source /etc/network/interfaces.d/*' > /etc/network/interfaces

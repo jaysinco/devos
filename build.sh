@@ -41,10 +41,10 @@ script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 function build_image_func() {
     sudo lb clean \
     && \
+    lb config \
+    && \
     find $script_dir/config/includes.chroot_after_packages/data/ \
         -name "*.deb" -exec mv -f {} $script_dir/config/packages.chroot/ \; \
-    && \
-    lb config \
     && \
     sudo lb build \
     && \
