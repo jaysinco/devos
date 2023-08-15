@@ -4,24 +4,9 @@ set -e
 
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
-bashrc_hint='#### devos user bootstrap ####'
-if ! grep -q "$bashrc_hint" $HOME/.bashrc; then
-    echo "-- change $HOME/.bashrc"
-    {
-        echo
-        echo
-        echo "$bashrc_hint"
-        echo "shopt -q login_shell || . /etc/profile.d/git-prompt.sh"
-        echo "export EDITOR=/usr/bin/nvim"
-        echo 'export PATH=/usr/local/sbin:/usr/sbin:/sbin:~/.local/bin:$PATH'
-        echo "alias code='code --enable-features=WaylandWindowDecorations --ozone-platform=wayland'"
-        echo
-    } >> $HOME/.bashrc
-fi
-
-if [[ ! $(type -P "conan") ]]; then
-    echo "-- install conan"
-    pip3 install conan==1.52 -i https://pypi.tuna.tsinghua.edu.cn/simple -q --break-system-packages
+if [ ! -f "$HOME/.bash_profile" ]; then
+    echo "-- install bash_profile"
+    cp /etc/devos/.bash_profile $HOME
 fi
 
 if [ ! -f "$HOME/.ssh/id_rsa" ]; then
@@ -33,6 +18,12 @@ if [ ! -f "$HOME/.ssh/id_rsa" ]; then
     chmod 644 $HOME/.ssh/id_rsa.pub
 fi
 
+if [ -f "$HOME/.local/bin/conan" ]; then
+    echo "-- install conan"
+    pip3 install conan==1.52 -i https://pypi.tuna.tsinghua.edu.cn/simple \
+        --quiet --no-warn-script-location
+fi
+
 nvim_data_dir=$HOME/.local/share/nvim
 if [ ! -d "$nvim_data_dir/site" ]; then
     echo "-- install nvim data"
@@ -41,14 +32,14 @@ if [ ! -d "$nvim_data_dir/site" ]; then
 fi
 
 konsole_data_dir=$HOME/.local/share/konsole
-if [ ! -d "$konsole_data_dir/sinco.profile" ]; then
+if [ ! -f "$konsole_data_dir/sinco.profile" ]; then
     echo "-- install konsole data"
     mkdir -p $konsole_data_dir
     cp /etc/devos/konsole/* $konsole_data_dir
 fi
 
 vscode_config_dir=$HOME/.config/Code/User
-if [ ! -d "$vscode_config_dir/extensions.json" ]; then
+if [ ! -f "$vscode_config_dir/extensions.json" ]; then
     echo "-- install vscode config"
     mkdir -p $vscode_config_dir
     cp /etc/devos/vscode/* $vscode_config_dir

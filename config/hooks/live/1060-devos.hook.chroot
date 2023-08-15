@@ -7,9 +7,19 @@ tar zxf /data/nvim-v0.7.2-linux-x86_64.tar.gz --directory=/usr --strip-component
 ln -s /usr/bin/nvim /usr/bin/vim
 rm /data/nvim-v0.7.2-linux-x86_64.tar.gz
 
-#install hack font
+# install hack font
 unzip /data/font-hack.zip -d /usr/share/fonts/hack
 rm /data/font-hack.zip
+
+# config git 
+git config --system init.defaultBranch master
+git config --system core.autocrlf input
+git config --system core.safecrlf false
+git config --system core.longpaths true
+git config --system core.quotepath false
+git config --system i18n.filesEncoding utf-8
+git config --system pull.rebase false
+git config --system fetch.prune true
 
 # enable weston
 systemctl enable weston
