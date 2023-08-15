@@ -20,9 +20,11 @@ rsync
 sudo
 zstd
 psmisc
+curl
 
 build-essential
 cmake
+ninja-build
 git
 clang
 clangd

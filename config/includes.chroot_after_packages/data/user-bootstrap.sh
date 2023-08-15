@@ -5,8 +5,26 @@ set -e
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 if [ ! -f "$HOME/.bash_profile" ]; then
-    echo "-- install bash_profile"
+    echo "-- install $HOME/bash_profile"
     cp /etc/devos/.bash_profile $HOME
+fi
+
+bashrc_hint='#### devos user bootstrap ####'
+if ! grep -q "$bashrc_hint" $HOME/.bashrc; then
+    echo "-- change $HOME/.bashrc"
+    {
+        echo
+        echo
+        echo "$bashrc_hint"
+        echo ". /etc/profile.d/git-prompt.sh"
+        echo "export EDITOR=/usr/bin/nvim"
+        echo 'export PATH=/usr/local/sbin:/usr/sbin:/sbin:$HOME/.local/bin:$HOME/flutter/bin:$PATH'
+        echo 'export SINCO_CONAN_SRCDIR=/data/src'
+        echo 'export PUB_HOSTED_URL=https://pub.flutter-io.cn'
+        echo 'export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn'
+        echo "alias code='code --enable-features=WaylandWindowDecorations --ozone-platform=wayland'"
+        echo
+    } >> $HOME/.bashrc
 fi
 
 if [ ! -f "$HOME/.ssh/id_rsa" ]; then
@@ -18,10 +36,10 @@ if [ ! -f "$HOME/.ssh/id_rsa" ]; then
     chmod 644 $HOME/.ssh/id_rsa.pub
 fi
 
-if [ -f "$HOME/.local/bin/conan" ]; then
+if [ ! -f "$HOME/.local/bin/conan" ]; then
     echo "-- install conan"
     pip3 install conan==1.52 -i https://pypi.tuna.tsinghua.edu.cn/simple \
-        --quiet --no-warn-script-location
+        --quiet --no-warn-script-location --break-system-packages
 fi
 
 nvim_data_dir=$HOME/.local/share/nvim
@@ -61,5 +79,6 @@ function clone_repo() {
 }
 
 clone_repo $HOME/.config/nvim jaysinco/nvim.git master
+clone_repo $HOME/flutter jaysinco/flutter.git dev
 clone_repo $HOME/atlas jaysinco/atlas.git master
 clone_repo $HOME/devos jaysinco/devos.git master
