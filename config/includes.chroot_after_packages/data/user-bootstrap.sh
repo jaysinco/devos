@@ -71,14 +71,14 @@ function clone_repo() {
         && git init \
         && git remote add origin git@gitee.com:$2 \
         && git fetch \
-        && git checkout origin/$3 -b $3 \
+        && git checkout $3 -b $4 \
         && git remote add backup git@github.com:$2
     fi
     git config user.name jaysinco
     git config user.email jaysinco@163.com
 }
 
-clone_repo $HOME/.config/nvim jaysinco/nvim.git master
-clone_repo $HOME/flutter jaysinco/flutter.git dev
-clone_repo $HOME/atlas jaysinco/atlas.git master
-clone_repo $HOME/devos jaysinco/devos.git master
+clone_repo $HOME/flutter jaysinco/flutter.git "tags/3.10.6" "3.10.6"
+clone_repo $HOME/.config/nvim jaysinco/nvim.git origin/master master
+clone_repo $HOME/atlas jaysinco/atlas.git origin/master master
+clone_repo $HOME/devos jaysinco/devos.git origin/master master
