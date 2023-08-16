@@ -17,11 +17,6 @@ if ! grep -q "$bashrc_hint" $HOME/.bashrc; then
         echo
         echo "$bashrc_hint"
         echo ". /etc/profile.d/git-prompt.sh"
-        echo "export EDITOR=/usr/bin/nvim"
-        echo 'export PATH=/usr/local/sbin:/usr/sbin:/sbin:$HOME/.local/bin:$HOME/flutter/bin:$PATH'
-        echo 'export SINCO_CONAN_SRCDIR=/data/src'
-        echo 'export PUB_HOSTED_URL=https://pub.flutter-io.cn'
-        echo 'export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn'
         echo "alias code='code --enable-features=WaylandWindowDecorations --ozone-platform=wayland'"
         echo
     } >> $HOME/.bashrc
