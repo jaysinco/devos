@@ -25,6 +25,7 @@ curl
 build-essential
 cmake
 ninja-build
+pkg-config
 git
 clang
 clangd
@@ -33,3 +34,4 @@ clang-tidy
 python3
 python3-pip
 python-is-python3
+libgtk-3-dev

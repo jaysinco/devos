@@ -5,7 +5,7 @@ set -e
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 if [ ! -f "$HOME/.bash_profile" ]; then
-    echo "-- install $HOME/bash_profile"
+    echo "-- install $HOME/.bash_profile"
     cp /etc/devos/.bash_profile $HOME
 fi
 
@@ -17,6 +17,19 @@ if ! grep -q "$bashrc_hint" $HOME/.bashrc; then
         echo
         echo "$bashrc_hint"
         echo ". /etc/profile.d/git-prompt.sh"
+        echo "export EDITOR=/usr/bin/nvim"
+        echo 'export PATH=/usr/local/sbin:/usr/sbin:/sbin:$HOME/.local/bin:$HOME/flutter/bin:$PATH'
+        echo 'export XDG_SESSION_TYPE=wayland'
+        echo 'export GDK_BACKEND=wayland'
+        echo 'export GDK_DPI_SCALE=1.2'
+        echo 'export GTK_IM_MODULE=fcitx'
+        echo 'export QT_QPA_PLATFORM=wayland'
+        echo 'export QT_IM_MODULE=fcitx'
+        echo 'export XMODIFIERS=@im=fcitx'
+        echo 'export SDL_IM_MODULE=fcitx'
+        echo 'export SINCO_CONAN_SRCDIR=/data/src'
+        echo 'export PUB_HOSTED_URL=https://pub.flutter-io.cn'
+        echo 'export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn'
         echo "alias code='code --enable-features=WaylandWindowDecorations --ozone-platform=wayland'"
         echo
     } >> $HOME/.bashrc
