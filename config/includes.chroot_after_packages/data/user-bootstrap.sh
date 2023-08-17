@@ -65,7 +65,7 @@ if [ ! -f "$konsole_data_dir/sinco.profile" ]; then
 fi
 
 vscode_config_dir=$HOME/.config/Code/User
-if [ ! -f "$vscode_config_dir/extensions.json" ]; then
+if [ ! -f "$vscode_config_dir/keybindings.json" ]; then
     echo "-- install vscode config"
     mkdir -p $vscode_config_dir
     cp /etc/devos/vscode/* $vscode_config_dir
