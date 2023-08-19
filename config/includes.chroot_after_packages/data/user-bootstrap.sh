@@ -71,6 +71,8 @@ if [ ! -f "$vscode_config_dir/keybindings.json" ]; then
     cp /etc/devos/vscode/* $vscode_config_dir
 fi
 
+mkdir -p $HOME/temp
+
 function clone_repo() {
     mkdir -p "$1"
     cd "$1"
