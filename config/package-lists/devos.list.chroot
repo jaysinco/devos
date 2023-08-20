@@ -22,6 +22,7 @@ zstd
 psmisc
 curl
 clinfo
+strace
 
 build-essential
 cmake
