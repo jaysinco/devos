@@ -25,6 +25,7 @@ clinfo
 strace
 
 build-essential
+gdb
 cmake
 ninja-build
 pkg-config
