@@ -1,8 +1,8 @@
 ## Build
 ```shell
-# upload data
+# upload to data dir
+# build image
 ./build.sh
-
 # write to disk
 dd if=./live-image-amd64.hybrid.iso of=/dev/sdb bs=64M conv=fsync status=progress
 ```

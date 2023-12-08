@@ -50,6 +50,17 @@ if [ ! -f "$HOME/.local/bin/conan" ]; then
         --quiet --no-warn-script-location --break-system-packages
 fi
 
+if [ ! -f "/usr/bin/ct-ng" ]; then
+    echo "-- install crosstool-ng"
+    sudo apt-get install gperf bison flex texinfo help2man libncurses5-dev \
+        autoconf automake libtool libtool-bin gawk meson
+    tar xf /data/crosstool-ng-1.26.0.tar.xz --directory=$HOME
+    pushd $HOME/crosstool-ng-1.26.0
+    ./configure --prefix=/usr && make && sudo make install
+    popd
+    rm -rf $HOME/crosstool-ng-1.26.0
+fi
+
 nvim_data_dir=$HOME/.local/share/nvim
 if [ ! -d "$nvim_data_dir/site" ]; then
     echo "-- install nvim data"
