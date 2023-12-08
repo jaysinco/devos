@@ -88,7 +88,8 @@ function clone_repo() {
     git config user.email jaysinco@163.com
 }
 
-clone_repo $HOME/flutter jaysinco/flutter.git "tags/3.10.6" "3.10.6"
+# clone_repo $HOME/flutter jaysinco/flutter.git "tags/3.10.6" "3.10.6"
 clone_repo $HOME/.config/nvim jaysinco/nvim.git origin/master master
 clone_repo $HOME/atlas jaysinco/atlas.git origin/master master
 clone_repo $HOME/devos jaysinco/devos.git origin/master master
+clone_repo $HOME/cpptools jaysinco/cpptools.git origin/master master
