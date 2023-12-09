@@ -9,7 +9,7 @@ dd if=./live-image-amd64.hybrid.iso of=/dev/sdb bs=64M conv=fsync status=progres
 
 ## Post Install
 ```shell
-# required
+# bootstrap
 /data/user-bootstrap.sh
 sudo passwd root
 
@@ -17,9 +17,11 @@ sudo passwd root
 sudo echo 'source /etc/network/interfaces.d/*' > /etc/network/interfaces
 sudo vim /etc/network/interfaces.d/0100-static-ip
 
-# keyboard
+# ime
 fcitx5-config-qt
 
 # misc
-xlsclients
+# switch konsole profile
+# install vscode recommended extensions
+
 ```
